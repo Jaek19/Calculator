@@ -1,0 +1,17 @@
+.graphFooter {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  margin-top: 10px;
+
+  button {
+    width: 65px;
+    height: 60px;
+    font-size: 2.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+}

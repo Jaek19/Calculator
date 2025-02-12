@@ -1,0 +1,115 @@
+import React from 'react';
+import './GraphInput.css';
+import { useState } from 'react';
+import { ChangeEvent } from 'react';
+
+interface IGraphInput {
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  onClick: () => void;
+}
+
+const GraphInput = ({onChange, onClick}: IGraphInput) => {
+  const [selected, setSelected] = useState<string>('1');
+
+  const renderInput = () => {
+    switch(selected) {
+      case '1':
+        return (
+          <>
+            <input type="text" value="y" readOnly />
+            <input type="text" value="=" readOnly />
+            <input type="text" onChange={onChange}/>
+            <input type="text" value="x" readOnly />
+            <input type="text" value="+" readOnly />
+            <input type="text" onChange={onChange}/>
+          </>
+        );
+        break;
+      case '2':
+        return (
+          <>
+            <input type="text" value="y" readOnly />
+            <input type="text" value="=" readOnly />
+            <input type="text" onChange={onChange}/>
+            <input type="text" value="x²" readOnly />
+            <input type="text" value="+" readOnly />
+            <input type="text" onChange={onChange}/>
+            <input type="text" value="x" readOnly />
+            <input type="text" value="+" readOnly />
+            <input type="text" onChange={onChange}/>
+          </>
+        );
+        break;
+      case '3':
+        return (
+          <>
+            <input type="text" value="y" readOnly />
+            <input type="text" value="=" readOnly />
+            <input type="text" onChange={onChange}/>
+            <input type="text" value="x³" readOnly />
+            <input type="text" value="+" readOnly />
+            <input type="text" onChange={onChange}/>
+            <input type="text" value="x²" readOnly />
+            <input type="text" value="+" readOnly />
+            <input type="text" onChange={onChange}/>
+            <input type="text" value="x" readOnly />
+            <input type="text" value="+" readOnly />
+            <input type="text" onChange={onChange}/>
+          </>
+        );
+        break;
+      case '4':
+        return (
+          <>
+            <input type="text" value="y" readOnly />
+            <input type="text" value="=" readOnly />
+            <input type="text" onChange={onChange}/>
+            <input type="text" value="x⁴" readOnly />
+            <input type="text" value="+" readOnly />
+            <input type="text" onChange={onChange}/>
+            <input type="text" value="x³" readOnly />
+            <input type="text" value="+" readOnly />
+            <input type="text" onChange={onChange}/>
+            <input type="text" value="x²" readOnly />
+            <input type="text" value="+" readOnly />
+            <input type="text" onChange={onChange}/>
+            <input type="text" value="x" readOnly />
+            <input type="text" value="+" readOnly />
+            <input type="text" onChange={onChange}/>
+          </>
+        );
+        break;
+      case '5': 
+        return (
+          <>
+            <input type="text" value="r" onChange={onChange}/>
+            <sup>2</sup>
+            <input type="text" value="=" readOnly />
+            (
+              <input type="text" value="x" readOnly />
+              <input type="text" value="-" readOnly />
+            )
+          </>
+        )
+
+    }
+  };
+
+  return (
+    <div className="graphInput">
+      <select value={selected} onChange={(e) => setSelected(e.target.value)}>
+        <option value="1">1차 함수</option>
+        <option value="2">2차 함수</option>
+        <option value="3">3차 함수</option>
+        <option value="4">4차 함수</option>
+        <option value="5">원</option>
+      </select>
+      <div className="inputWrapper">
+                {renderInput()}
+      </div>
+      <button type="button" onClick={onClick}>DRAW</button>
+    </div>
+  );
+};
+
+export default GraphInput;

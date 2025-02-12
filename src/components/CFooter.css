@@ -1,0 +1,75 @@
+.cFooter {
+  height:350px;
+  padding: 1rem;
+  gap: 8px;
+  display: flex;
+}
+
+.numberBtnWrapper {
+  flex:3;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap:0.2rem;
+
+  button {
+    border-radius: 12px;
+    background-color: #E8E8ED;
+    color: #1D1D1F;
+    cursor: pointer;
+    font-size: 2rem;
+	font-family: "Noto Sans-KR";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: background-color 0.1s linear;
+  }
+  button:hover {
+    background-color: #D1D1DB;
+  }
+}
+
+.operatorBtnWrapper {
+  flex: 2;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.2rem;
+  
+  button {
+    font-size: 2rem;
+    border-radius: 12px;
+    background-color: #D2D2D7;
+    color: #1D1D1F;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: background-color 0.2s linear;
+  }
+  .deleteBtn {
+    font-size: 3rem;
+  }
+  button:nth-of-type(1), button:nth-of-type(2) {
+    background-color: #0071E3;
+    color: white;
+  }
+  button:hover {
+    background-color: #BBBBC1; 
+  }
+  button:nth-of-type(1):hover {
+    background-color: #0059B3;
+  }
+  button:nth-of-type(2):hover {
+    background-color: #0059B3;
+  }
+
+}
+
+.deleteBtn {
+  font-size: 2.5rem;
+}
+
+
